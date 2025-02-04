@@ -1,14 +1,20 @@
 <?php
 
-$host = "ep-morning-resonance-a2jg0as0-pooler.eu-central-1.aws.neon.tech";
-$user = "neondb_owner";
-$password = "npg_wtCf0dbXFSy4";
-$database = "neondb";
+// Obtén las variables de entorno
+$host = getenv('PGHOST');
+$port = 5432; // Puerto por defecto de PostgreSQL
+$dbname = getenv('PGDATABASE');
+$user = getenv('PGUSER');
+$password = getenv('PGPASSWORD');
 
-$conn = new mysqli($host, $user, $password, $database);
+// Crea la conexión
+$conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
 
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+// Verifica si la conexión fue exitosa
+if (!$conn) {
+    die("Error de conexión a PostgreSQL: " . pg_last_error());
 }
+
+echo "Conexión exitosa a PostgreSQL";
 
 ?>
