@@ -5,7 +5,7 @@ $sXML=download("https://e00-elmundo.uecdn.es/elmundo/rss/espana.xml");
 
 $oXML=new SimpleXMLElement($sXML);
 
-require_once "api/conexionBBDD.php";
+require_once "/var/task/user/api/conexionBBDD.php";
 
 
 if(mysqli_connect_error()){
