@@ -1,5 +1,5 @@
 <?php
-require_once "conexionRSS.php";
+require_once "/var/task/user/api/conexionBBDD.php";
 
 $sXML=download("https://e00-elmundo.uecdn.es/elmundo/rss/espana.xml");
 

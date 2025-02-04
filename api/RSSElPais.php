@@ -1,5 +1,5 @@
 <?php
-require_once "conexionRSS.php";
+require_once "/var/task/user/api/conexionBBDD.php";
 
 $sXML=download("http://ep00.epimg.net/rss/elpais/portada.xml");
 
