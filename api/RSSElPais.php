@@ -5,6 +5,12 @@ $sXML=download("http://ep00.epimg.net/rss/elpais/portada.xml");
 
 $oXML=new SimpleXMLElement($sXML);
 
+echo "Directorio actual: " . getcwd() . "\n";
+echo "Archivos en el directorio:\n";
+print_r(scandir(getcwd()));
+
+
+
 require_once "conexionBBDD.php";
 
 if(mysqli_connect_error()){
