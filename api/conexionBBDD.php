@@ -1,20 +1,21 @@
 <?php
 
-// Obtén las variables de entorno
-$host = getenv('PGHOST');
-$port = 5432; // Puerto por defecto de PostgreSQL
-$dbname = getenv('PGDATABASE');
-$user = getenv('PGUSER');
-$password = getenv('PGPASSWORD');
+try {
+    $host = getenv('PGHOST');
+    $dbname = getenv('PGDATABASE');
+    $user = getenv('PGUSER');
+    $password = getenv('PGPASSWORD');
+    $dsn = "pgsql:host=$host;port=5432;dbname=$dbname";
 
-// Crea la conexión
-$conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
+    // Crear conexión con PDO
+    $conn = new PDO($dsn, $user, $password);
 
-// Verifica si la conexión fue exitosa
-if (!$conn) {
-    die("Error de conexión a PostgreSQL: " . pg_last_error());
+    // Configurar el manejo de errores
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    echo "Conexión exitosa a PostgreSQL";
+} catch (PDOException $e) {
+    die("Error de conexión: " . $e->getMessage());
 }
-
-echo "Conexión exitosa a PostgreSQL";
 
 ?>
