@@ -11,7 +11,7 @@ print_r(scandir(getcwd()));
 
 
 
-require_once "api/conexionBBDD.php";
+require_once "/var/task/user/api/conexionBBDD.php";
 
 if(mysqli_connect_error()){
     printf("Conexión a el periódico El País ha fallado");
