@@ -5,7 +5,7 @@ $sXML=download("http://ep00.epimg.net/rss/elpais/portada.xml");
 
 $oXML=new SimpleXMLElement($sXML);
 
-require_once "conexionBBDD.php";
+require_once "./conexionBBDD.php";
 
 if(mysqli_connect_error()){
     printf("Conexión a el periódico El País ha fallado");
