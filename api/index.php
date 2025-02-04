@@ -48,6 +48,11 @@ and open the template in the editor.
         
         require_once "/var/task/user/api/RSSElPais.php";
         require_once "/var/task/user/api/RSSElMundo.php";
+        if (!extension_loaded('pgsql')) {
+            echo 'La extensión pgsql no está habilitada.';
+        } else {
+            echo 'La extensión pgsql está habilitada.';
+        }
         
         function filtros($sql, $link){
                  $filtrar= mysqli_query($link, $sql);
