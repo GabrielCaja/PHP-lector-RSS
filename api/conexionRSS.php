@@ -2,6 +2,7 @@
 
 function download($ruta){
     $ch=curl_init();
+    file_get_contents($ruta);
     curl_setopt($ch,CURLOPT_URL,$ruta);
     curl_setopt($ch,CURLOPT_POST,0); // post descarga datos y get los sube
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
