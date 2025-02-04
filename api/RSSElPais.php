@@ -1,5 +1,4 @@
 <?php
-phpinfo();
 require_once "conexionRSS.php";
 
 $sXML=download("http://ep00.epimg.net/rss/elpais/portada.xml");

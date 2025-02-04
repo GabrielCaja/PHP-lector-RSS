@@ -1,5 +1,4 @@
 <?php
-
 require_once "conexionRSS.php";
 
 $sXML=download("https://e00-elmundo.uecdn.es/elmundo/rss/espana.xml");
