@@ -1,9 +1,9 @@
 <?php
 
-$host = getenv("DB_HOST");
-$user = getenv("DB_USER");
-$password = getenv("DB_PASSWORD");
-$database = getenv("DB_NAME");
+$host = "ep-morning-resonance-a2jg0as0-pooler.eu-central-1.aws.neon.tech";
+$user = "neondb_owner";
+$password = "npg_wtCf0dbXFSy4";
+$database = "neondb";
 
 $conn = new mysqli($host, $user, $password, $database);
 
